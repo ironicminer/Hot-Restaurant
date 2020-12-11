@@ -24,12 +24,12 @@
         <h2 class="text-center">Make your reservation</h2>
         <br />
         <div class="text-center">
-          <a href="./viewTables.html"
+          <a href="/waiting"
             ><button type="button" class="btn btn-lg btn-primary">
               View Tables
             </button></a
           >
-          <a href="./index.html"
+          <a href="/"
             ><button type="button" class="btn btn-lg btn-default">
               Home
             </button></a
@@ -83,15 +83,22 @@
 
     <script type="text/javascript">
       $("#submitButton").on("click", function (event) {
+        event.preventDefault();
         let newCustomer = {
           name: $("#form_name").val().trim(),
           phoneNumber: $("#form_phone").val().trim(),
           email: $("#form_email").val().trim(),
           uniqueId: $("#form_uniqueID"),
         };
-        $.post("/api/Customer", newCustomer).then(function (data) {
-          console.log(data);
-        });
+        console.log("button clicked");
+        /* $.post("/api/customer", newCustomer).then(
+          function (data) {
+            console.log(data);
+          },
+          function (err) {
+            console.log(err);
+          }
+        ); */
       });
     </script>
   </body>

@@ -10,7 +10,7 @@ app.use(express.json());
 
 let customer = [
   {
-    routeName: "Customer",
+    routeName: "customer",
     name: "",
     phoneNumber: "",
     email: "",
@@ -27,6 +27,7 @@ app.get("/add", function (req, res) {
   res.sendFile(path.join(__dirname, "reservationForm.html"));
 });
 app.get("/waiting", function (req, res) {
+  console.log(path.join(__dirname, "viewTables.html"));
   res.sendFile(path.join(__dirname, "viewTables.html"));
 });
 
@@ -45,4 +46,5 @@ app.post("/api/customer", function (req, res) {
 // Start Server
 app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);
+  console.log("http://localhost:" + PORT);
 });
