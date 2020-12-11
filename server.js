@@ -24,10 +24,10 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 app.get("/add", function (req, res) {
-  res.sendFile(path.join(__dirname, "add.html"));
+  res.sendFile(path.join(__dirname, "reservationForm.html"));
 });
 app.get("/waiting", function (req, res) {
-  res.sendFile(path.join(__dirname, "waiting.html"));
+  res.sendFile(path.join(__dirname, "viewTables.html"));
 });
 
 app.get("/api/customer", function (req, res) {
